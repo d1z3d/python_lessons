@@ -1,14 +1,16 @@
 # Задание №2
 
-# Дано слово из маленьких латинских букв. Сколько там согласных и гласных букв? Гласными называют буквы «a», «e», «i», «o», «u».
+# Вводится натуральное число X. Подсчитайте количество натуральных делителей числа X (включая 1 и само число). x ≤ 2e9 (2 миллиарда)
 
-# Для решения задачи создайте переменную и в неё положите слово с помощью input()
+import math
 
-# А также определите количество каждой из этих гласных букв Если какой-то из перечисленных букв нет - Выведите False
-word = input("Введите слово из маленьких латинских букв: ").lower()
-vowels = "aeiou"
+x = int(input("Введите натуральное число X: "))
+count = 0
 
-vowel_count = sum(1 for letter in word if letter in vowels)
-consonant_count = sum(1 for letter in word if letter.isalpha() and letter not in vowels)
+for i in range(1, int(math.isqrt(x)) + 1):
+    if x % i == 0:
+        count += 1 
+        if i != x // i:
+            count += 1
 
-print("False" if vowel_count == 0 else f"Количество гласных букв: {vowel_count}\nКоличество согласных букв: {consonant_count}")
+print("Количество натуральных делителей:", count)
