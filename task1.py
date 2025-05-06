@@ -1,9 +1,19 @@
 # Задание №1
 
-# На вход подается 1 строка без пробелов. По данной строке определите, является ли она палиндромом (то есть, можно ли прочесть ее наоборот, как, например, слово "шалаш"). Необходимо вывести ”yes”, если строка является палиндромом, и “no” в противном случае.
+N = int(input("Введите количество чисел: "))
 
-word = input("Введите строку: ")
-reversed_word = word[::-1]
-isPalindrome = word == reversed_word
+numbers = []
+for number in range(N):
+    number = int(input("Введите число: "))
+    if number <= 1 or number >= 10000 or abs(number) > 1e5:
+        print("Ошибка: число должно быть больше 1, меньше 10000 и по модулю не превышать 10^5")
+        exit()
+    
+    numbers.append(number)
 
-print("yes" if isPalindrome else "no")
+# Переворот массива
+reversed_numbers = numbers[::-1]
+
+# Вывод перевёрнутого массива
+for number in reversed_numbers:
+    print(number)
