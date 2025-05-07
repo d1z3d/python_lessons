@@ -11,9 +11,6 @@ for number in range(N):
     
     numbers.append(number)
 
-# Переворот массива
 reversed_numbers = numbers[::-1]
-
-# Вывод перевёрнутого массива
 for number in reversed_numbers:
     print(number)
