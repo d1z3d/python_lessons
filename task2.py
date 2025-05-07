@@ -1,21 +1,6 @@
 # Задание №2
 
-N = int(input("Введите количество чисел: "))
-if N < 1 or N > 100000:
-    print("Ошибка: N должно быть от 1 до 100000")
-    exit()
-
-numbers = list(map(int, input("Введите числа через пробел: ").split()))
-print(numbers)
-
-if len(numbers) != N:
-    print("Ошибка: количество чисел не соответствует N")
-    exit()
-
-for num in numbers:
-    if num < 1 or num > 10**9:
-        print("Ошибка: каждое число должно быть от 1 до 10^9")
-        exit()
-
-result = [numbers[-1]] + numbers[:-1]
-print(*result)
+numbers1 = set(map(int, input("Введите числа первого списка через пробел: ").split()))
+numbers2 = set(map(int, input("Введите числа второго списка через пробел: ").split()))
+common_numbers = numbers1.intersection(numbers2)
+print("Количество чисел, содержащихся в обоих списках:", len(common_numbers))

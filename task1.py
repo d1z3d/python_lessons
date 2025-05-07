@@ -1,16 +1,11 @@
 # Задание №1
 
-N = int(input("Введите количество чисел: "))
+N = int(input("Введите количество чисел от 1 до 100000: "))
 
-numbers = []
-for number in range(N):
-    number = int(input("Введите число: "))
-    if number <= 1 or number >= 10000 or abs(number) > 1e5:
-        print("Ошибка: число должно быть больше 1, меньше 10000 и по модулю не превышать 10^5")
-        exit()
-    
-    numbers.append(number)
+numbers = map(int, input("Введите числа через пробел: ").split())
+if len(numbers) != N:
+    print("Количество чисел не совпадает с введенным N.")
+    exit()
 
-reversed_numbers = numbers[::-1]
-for number in reversed_numbers:
-    print(number)
+unique_numbers = set(numbers)
+print("Количество различных чисел:", len(unique_numbers))
